@@ -1,8 +1,14 @@
 import React from 'react';
 import { Building2, Coins, Globe, Hammer, Ban as Bank, Receipt, Wallet, Banknote, Lock, Timer, Sparkles, Clock, Coins as TokenIcon, BookOpen, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { formatSOL } from './utils/solana';
 
 function App() {
+  // Calculate funding progress
+  const targetAmount = 277777;
+  const raisedAmount = 10;
+  const progressPercentage = (raisedAmount / targetAmount) * 100;
+
   return (
     <div className="min-h-screen bg-black">
       {/* Header */}
@@ -45,7 +51,7 @@ function App() {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#f0d06e]/20 to-transparent blur-xl opacity-50"></div>
                 <div className="relative">
-                  <h1 className="text-6xl font-bold text-white mb-6 text-glow transform transition-transform hover:scale-105">
+                  <h1 className="text-6xl font-bold text-white mb-6 text-glow">
                     THE <span className="text-[#f0d06e]">BLOC</span>
                   </h1>
                   <p className="text-xl text-gray-300 leading-relaxed">
@@ -70,6 +76,59 @@ function App() {
                     className="rounded-lg shadow-2xl"
                   />
                   <div className="absolute inset-0 rounded-lg shadow-[inset_0_0_100px_rgba(240,208,110,0.2)] pointer-events-none"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Project */}
+        <section className="py-20 bg-black relative overflow-hidden">
+          <div className="absolute inset-0 grid-background opacity-25"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 className="text-3xl font-bold text-center text-white mb-12 text-glow">Featured Development</h2>
+            <div className="hover-card animated-border bg-black/60 backdrop-blur-md rounded-xl overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="relative h-[400px]">
+                  <img 
+                    src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg"
+                    alt="Los Angeles Development"
+                    className="absolute inset-0 w-full h-full object-cover rounded-l-xl"
+                  />
+                </div>
+                <div className="p-8">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="bg-[#f0d06e] text-black text-sm px-3 py-1 rounded-full">Featured</span>
+                    <span className="bg-green-500 text-white text-sm px-3 py-1 rounded-full">Los Angeles</span>
+                  </div>
+                  <h3 className="text-2xl font-semibold text-white mb-4">Sunset Boulevard Residences</h3>
+                  <p className="text-gray-300 mb-6">
+                    Luxury apartment development in the heart of Los Angeles. This ground-up development features sustainable design, 
+                    smart home technology, and premium amenities.
+                  </p>
+                  <div className="space-y-4">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-400">Target Raise</span>
+                      <span className="text-[#f0d06e]">{formatSOL(targetAmount)}</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-400">Raised</span>
+                      <span className="text-[#f0d06e]">{formatSOL(raisedAmount)}</span>
+                    </div>
+                    <div className="w-full bg-gray-700 rounded-full h-2">
+                      <div 
+                        className="bg-[#f0d06e] h-2 rounded-full" 
+                        style={{ width: `${progressPercentage}%` }}
+                      ></div>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-400">Progress</span>
+                      <span className="text-[#f0d06e]">{progressPercentage.toFixed(2)}%</span>
+                    </div>
+                    <button className="w-full bg-[#f0d06e] text-black px-4 py-3 rounded-lg hover:bg-[#e0c15e] transition-colors flex items-center justify-center gap-2">
+                      Invest Now <ArrowRight className="h-4 w-4" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -143,282 +202,6 @@ function App() {
           </div>
         </section>
 
-        {/* Featured Properties */}
-        <section className="py-20 bg-black relative overflow-hidden">
-          <div className="absolute top-40 right-[25%] w-80 h-80 floating-cube opacity-30"></div>
-          <div className="absolute bottom-20 left-[30%] w-64 h-64 floating-cube-delayed-more opacity-20"></div>
-          <div className="absolute inset-0 grid-background opacity-25"></div>
-          
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <h2 className="text-3xl font-bold text-center text-white mb-12 text-glow">Featured Properties</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="hover-card animated-border bg-black/60 backdrop-blur-md rounded-xl overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80" 
-                  alt="Office Building" 
-                  className="h-48 w-full object-cover"
-                />
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="bg-blue-500 text-white text-sm px-3 py-1 rounded-full">Commercial</span>
-                    <span className="bg-green-500 text-white text-sm px-3 py-1 rounded-full">Available</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Downtown Office Complex</h3>
-                  <p className="text-gray-300 mb-4">Modern office space in prime location</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-[#f0d06e] font-semibold">$25M</span>
-                    <button className="bg-[#f0d06e] text-black px-4 py-2 rounded-lg hover:bg-[#e0c15e] transition-colors">
-                      View Details
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="hover-card animated-border bg-black/60 backdrop-blur-md rounded-xl overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80" 
-                  alt="Retail Space" 
-                  className="h-48 w-full object-cover"
-                />
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="bg-purple-500 text-white text-sm px-3 py-1 rounded-full">Retail</span>
-                    <span className="bg-green-500 text-white text-sm px-3 py-1 rounded-full">Available</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Luxury Mall Complex</h3>
-                  <p className="text-gray-300 mb-4">High-end retail space with premium foot traffic</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-[#f0d06e] font-semibold">$40M</span>
-                    <button className="bg-[#f0d06e] text-black px-4 py-2 rounded-lg hover:bg-[#e0c15e] transition-colors">
-                      View Details
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="hover-card animated-border bg-black/60 backdrop-blur-md rounded-xl overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80" 
-                  alt="Apartment Complex" 
-                  className="h-48 w-full object-cover"
-                />
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="bg-orange-500 text-white text-sm px-3 py-1 rounded-full">Residential</span>
-                    <span className="bg-green-500 text-white text-sm px-3 py-1 rounded-full">Available</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Urban Living Apartments</h3>
-                  <p className="text-gray-300 mb-4">Modern apartment complex in city center</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-[#f0d06e] font-semibold">$35M</span>
-                    <button className="bg-[#f0d06e] text-black px-4 py-2 rounded-lg hover:bg-[#e0c15e] transition-colors">
-                      View Details
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Properties on Auction */}
-        <section className="py-20 bg-black relative overflow-hidden">
-          <div className="absolute top-40 right-[25%] w-80 h-80 floating-cube opacity-30"></div>
-          <div className="absolute bottom-20 left-[30%] w-64 h-64 floating-cube-delayed-more opacity-20"></div>
-          <div className="absolute inset-0 grid-background opacity-25"></div>
-          
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <h2 className="text-3xl font-bold text-center text-white mb-12 text-glow">Properties on Auction</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="hover-card animated-border bg-black/60 backdrop-blur-md rounded-xl overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80" 
-                  alt="Office Space" 
-                  className="h-48 w-full object-cover"
-                />
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="bg-red-500 text-white text-sm px-3 py-1 rounded-full">Auction</span>
-                    <span className="bg-yellow-500 text-white text-sm px-3 py-1 rounded-full">24h Left</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Tech Hub Offices</h3>
-                  <p className="text-gray-300 mb-4">Premium office space in tech district</p>
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <p className="text-sm text-gray-400">Current Bid</p>
-                      <span className="text-[#f0d06e] font-semibold">$18.5M</span>
-                    </div>
-                    <button className="bg-[#f0d06e] text-black px-4 py-2 rounded-lg hover:bg-[#e0c15e] transition-colors">
-                      Place Bid
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="hover-card animated-border bg-black/60 backdrop-blur-md rounded-xl overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80" 
-                  alt="Hotel Property" 
-                  className="h-48 w-full object-cover"
-                />
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="bg-red-500 text-white text-sm px-3 py-1 rounded-full">Auction</span>
-                    <span className="bg-yellow-500 text-white text-sm px-3 py-1 rounded-full">48h Left</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Boutique Hotel</h3>
-                  <p className="text-gray-300 mb-4">Luxury hotel in tourist district</p>
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <p className="text-sm text-gray-400">Current Bid</p>
-                      <span className="text-[#f0d06e] font-semibold">$22M</span>
-                    </div>
-                    <button className="bg-[#f0d06e] text-black px-4 py-2 rounded-lg hover:bg-[#e0c15e] transition-colors">
-                      Place Bid
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="hover-card animated-border bg-black/60 backdrop-blur-md rounded-xl overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1519642918688-7e43b19245d8?auto=format&fit=crop&q=80" 
-                  alt="Industrial Space" 
-                  className="h-48 w-full object-cover"
-                />
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="bg-red-500 text-white text-sm px-3 py-1 rounded-full">Auction</span>
-                    <span className="bg-yellow-500 text-white text-sm px-3 py-1 rounded-full">72h Left</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Industrial Complex</h3>
-                  <p className="text-gray-300 mb-4">Modern warehouse with office space</p>
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <p className="text-sm text-gray-400">Current Bid</p>
-                      <span className="text-[#f0d06e] font-semibold">$15M</span>
-                    </div>
-                    <button className="bg-[#f0d06e] text-black px-4 py-2 rounded-lg hover:bg-[#e0c15e] transition-colors">
-                      Place Bid
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Tokenized Properties */}
-        <section className="py-20 bg-black relative overflow-hidden">
-          <div className="absolute top-40 right-[25%] w-80 h-80 floating-cube opacity-30"></div>
-          <div className="absolute bottom-20 left-[30%] w-64 h-64 floating-cube-delayed-more opacity-20"></div>
-          <div className="absolute inset-0 grid-background opacity-25"></div>
-          
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <h2 className="text-3xl font-bold text-center text-white mb-12 text-glow">Tokenized Properties</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="hover-card animated-border bg-black/60 backdrop-blur-md rounded-xl overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?auto=format&fit=crop&q=80" 
-                  alt="Luxury Apartments" 
-                  className="h-48 w-full object-cover"
-                />
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="bg-indigo-500 text-white text-sm px-3 py-1 rounded-full">Tokenized</span>
-                    <span className="bg-green-500 text-white text-sm px-3 py-1 rounded-full">85% Funded</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Sky View Residences</h3>
-                  <p className="text-gray-300 mb-4">Luxury apartment complex with ocean views</p>
-                  <div className="space-y-4">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Token Price</span>
-                      <span className="text-[#f0d06e]">$100</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Min Investment</span>
-                      <span className="text-[#f0d06e]">$1,000</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Expected Yield</span>
-                      <span className="text-[#f0d06e]">8.5% APY</span>
-                    </div>
-                    <button className="w-full bg-[#f0d06e] text-black px-4 py-2 rounded-lg hover:bg-[#e0c15e] transition-colors">
-                      Invest Now
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="hover-card animated-border bg-black/60 backdrop-blur-md rounded-xl overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80" 
-                  alt="Office Tower" 
-                  className="h-48 w-full object-cover"
-                />
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="bg-indigo-500 text-white text-sm px-3 py-1 rounded-full">Tokenized</span>
-                    <span className="bg-green-500 text-white text-sm px-3 py-1 rounded-full">92% Funded</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Innovation Tower</h3>
-                  <p className="text-gray-300 mb-4">Grade A office building in business district</p>
-                  <div className="space-y-4">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Token Price</span>
-                      <span className="text-[#f0d06e]">$250</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Min Investment</span>
-                      <span className="text-[#f0d06e]">$2,500</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Expected Yield</span>
-                      <span className="text-[#f0d06e]">7.2% APY</span>
-                    </div>
-                    <button className="w-full bg-[#f0d06e] text-black px-4 py-2 rounded-lg hover:bg-[#e0c15e] transition-colors">
-                      Invest Now
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="hover-card animated-border bg-black/60 backdrop-blur-md rounded-xl overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&q=80" 
-                  alt="Shopping Center" 
-                  className="h-48 w-full object-cover"
-                />
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="bg-indigo-500 text-white text-sm px-3 py-1 rounded-full">Tokenized</span>
-                    <span className="bg-green-500 text-white text-sm px-3 py-1 rounded-full">78% Funded</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Metro Mall</h3>
-                  <p className="text-gray-300 mb-4">Premium shopping center in urban area</p>
-                  <div className="space-y-4">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Token Price</span>
-                      <span className="text-[#f0d06e]">$150</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Min Investment</span>
-                      <span className="text-[#f0d06e]">$1,500</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Expected Yield</span>
-                      <span className="text-[#f0d06e]">9.1% APY</span>
-                    </div>
-                    <button className="w-full bg-[#f0d06e] text-black px-4 py-2 rounded-lg hover:bg-[#e0c15e] transition-colors">
-                      Invest Now
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* DeFi Features */}
         <section className="py-20 bg-black relative overflow-hidden">
           <div className="absolute top-40 right-[25%] w-80 h-80 floating-cube opacity-30"></div>
@@ -458,4 +241,111 @@ function App() {
 
         {/* AI Integration */}
         <section className="py-20 bg-black relative overflow-hidden">
-          <div className="absolute top-40 r
+          <div className="absolute top-40 right-[25%] w-80 h-80 floating-cube opacity-30"></div>
+          <div className="absolute bottom-20 left-[30%] w-64 h-64 floating-cube-delayed-more opacity-20"></div>
+          
+          <div className="absolute inset-0 grid-background opacity-25"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 className="text-3xl font-bold text-center text-white mb-12 text-glow">
+              AI-Powered Real Estate Intelligence
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="hover-card animated-border bg-black/60 backdrop-blur-md p-8 rounded-xl text-center">
+                <Sparkles className="h-12 w-12 text-[#f0d06e] mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-4 text-white">Smart Deal Matching</h3>
+                <p className="text-gray-300">
+                  Our AI agents analyze your investment preferences and match you with the perfect properties.
+                </p>
+              </div>
+              <div className="hover-card animated-border bg-black/60 backdrop-blur-md p-8 rounded-xl text-center">
+                <Timer className="h-12 w-12 text-[#f0d06e] mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-4 text-white">Automated Due Diligence</h3>
+                <p className="text-gray-300">
+                  AI-powered analysis of property documents, market data, and risk factors for faster decision making.
+                </p>
+              </div>
+              <div className="hover-card animated-border bg-black/60 backdrop-blur-md p-8 rounded-xl text-center">
+                <BookOpen className="h-12 w-12 text-[#f0d06e] mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-4 text-white">Smart Underwriting</h3>
+                <p className="text-gray-300">
+                  Advanced AI algorithms assess property values, market conditions, and risk factors for optimal underwriting.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="bg-[#f0d06e] py-20 relative overflow-hidden">
+          <div className="absolute top-20 right-[20%] w-60 h-60 floating-cube bg-black/10 opacity-30"></div>
+          <div className="absolute bottom-40 left-[25%] w-48 h-48 floating-cube-delayed bg-black/10 opacity-20"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 className="text-3xl font-bold text-black mb-6">
+              Ready to Transform Real Estate Investment?
+            </h2>
+            <p className="text-xl text-gray-800 mb-8 max-w-2xl">
+              Join the future of property investment and unlock new possibilities in the world of tokenized real estate.
+            </p>
+            <div className="flex justify-center space-x-4">
+              <button className="bg-black text-[#f0d06e] px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-900 transition-colors">
+                Start Investing
+              </button>
+              <button className="border-2 border-black text-black px-8 py-3 rounded-lg text-lg font-semibold hover:bg-black hover:text-[#f0d06e] transition-colors">
+                List Your Property
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="bg-black text-gray-400 py-12 border-t border-gray-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <Building2 className="h-8 w-8 text-[#f0d06e]" />
+                  <span className="font-bold text-xl text-white">The Bloc</span>
+                </div>
+                <p>Transforming real estate investment through blockchain technology.</p>
+              </div>
+              <div>
+                <h4 className="text-white font-semibold mb-4">Investment Options</h4>
+                <ul className="space-y-2">
+                  <li className="hover:text-[#f0d06e] cursor-pointer transition-colors">Commercial Properties</li>
+                  <li className="hover:text-[#f0d06e] cursor-pointer transition-colors">Opportunity Zones</li>
+                  <li className="hover:text-[#f0d06e] cursor-pointer transition-colors">Development Projects</li>
+                  <li className="hover:text-[#f0d06e] cursor-pointer transition-colors">Modular Properties</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-white font-semibold mb-4">Platform</h4>
+                <ul className="space-y-2">
+                  <li className="hover:text-[#f0d06e] cursor-pointer transition-colors">How It Works</li>
+                  <li className="hover:text-[#f0d06e] cursor-pointer transition-colors">Marketplace</li>
+                  <li className="hover:text-[#f0d06e] cursor-pointer transition-colors">Developer Portal</li>
+                  <li className="hover:text-[#f0d06e] cursor-pointer transition-colors">DeFi Integration</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-white font-semibold mb-4">Resources</h4>
+                <ul className="space-y-2">
+                  <li className="hover:text-[#f0d06e] cursor-pointer transition-colors">Documentation</li>
+                  <li className="hover:text-[#f0d06e] cursor-pointer transition-colors">Legal Framework</li>
+                  <li className="hover:text-[#f0d06e] cursor-pointer transition-colors">Security</li>
+                  <li className="hover:text-[#f0d06e] cursor-pointer transition-colors">Support</li>
+                </ul>
+              </div>
+            </div>
+            <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+              <p>&copy; 2024 The Bloc. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+  );
+}
+
+export default App;
