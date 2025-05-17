@@ -458,4 +458,152 @@ function App() {
 
         {/* AI Integration */}
         <section className="py-20 bg-black relative overflow-hidden">
-          <div className="absolute top-40 r
+          <div className="absolute top-40 right-[25%] w-80 h-80 floating-cube opacity-30"></div>
+          <div className="absolute bottom-20 left-[30%] w-64 h-64 floating-cube-delayed-more opacity-20"></div>
+          <div className="absolute inset-0 grid-background opacity-25"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 className="text-3xl font-bold text-center text-white mb-12 text-glow">
+              AI-Powered Property Analysis
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="hover-card animated-border bg-black/60 backdrop-blur-md p-8 rounded-xl text-center">
+                <Sparkles className="h-12 w-12 text-[#f0d06e] mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-4 text-white">Smart Valuation</h3>
+                <p className="text-gray-300">
+                  AI-driven property valuation using market data and predictive analytics.
+                </p>
+              </div>
+              <div className="hover-card animated-border bg-black/60 backdrop-blur-md p-8 rounded-xl text-center">
+                <Clock className="h-12 w-12 text-[#f0d06e] mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-4 text-white">Market Timing</h3>
+                <p className="text-gray-300">
+                  Optimal investment timing suggestions based on market trends and conditions.
+                </p>
+              </div>
+              <div className="hover-card animated-border bg-black/60 backdrop-blur-md p-8 rounded-xl text-center">
+                <TokenIcon className="h-12 w-12 text-[#f0d06e] mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-4 text-white">Token Analytics</h3>
+                <p className="text-gray-300">
+                  Advanced analytics for property token performance and market dynamics.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Resources */}
+        <section className="py-20 bg-black relative overflow-hidden">
+          <div className="absolute top-40 right-[25%] w-80 h-80 floating-cube opacity-30"></div>
+          <div className="absolute bottom-20 left-[30%] w-64 h-64 floating-cube-delayed-more opacity-20"></div>
+          <div className="absolute inset-0 grid-background opacity-25"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 className="text-3xl font-bold text-center text-white mb-12 text-glow">
+              Educational Resources
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <Link to="/blog" className="hover-card animated-border bg-black/60 backdrop-blur-md p-6 rounded-xl group">
+                <BookOpen className="h-8 w-8 text-[#f0d06e] mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">Blockchain Basics</h3>
+                <p className="text-gray-300 text-sm mb-4">Learn the fundamentals of blockchain technology in real estate.</p>
+                <div className="flex items-center text-[#f0d06e] group-hover:gap-2 transition-all">
+                  <span>Read More</span>
+                  <ArrowRight className="h-4 w-4" />
+                </div>
+              </Link>
+              
+              <Link to="/blog" className="hover-card animated-border bg-black/60 backdrop-blur-md p-6 rounded-xl group">
+                <BookOpen className="h-8 w-8 text-[#f0d06e] mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">Investment Guides</h3>
+                <p className="text-gray-300 text-sm mb-4">Comprehensive guides on property investment strategies.</p>
+                <div className="flex items-center text-[#f0d06e] group-hover:gap-2 transition-all">
+                  <span>Read More</span>
+                  <ArrowRight className="h-4 w-4" />
+                </div>
+              </Link>
+              
+              <Link to="/blog" className="hover-card animated-border bg-black/60 backdrop-blur-md p-6 rounded-xl group">
+                <BookOpen className="h-8 w-8 text-[#f0d06e] mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">Market Reports</h3>
+                <p className="text-gray-300 text-sm mb-4">In-depth analysis of real estate market trends.</p>
+                <div className="flex items-center text-[#f0d06e] group-hover:gap-2 transition-all">
+                  <span>Read More</span>
+                  <ArrowRight className="h-4 w-4" />
+                </div>
+              </Link>
+              
+              <Link to="/blog" className="hover-card animated-border bg-black/60 backdrop-blur-md p-6 rounded-xl group">
+                <BookOpen className="h-8 w-8 text-[#f0d06e] mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">Case Studies</h3>
+                <p className="text-gray-300 text-sm mb-4">Real-world examples of successful property investments.</p>
+                <div className="flex items-center text-[#f0d06e] group-hover:gap-2 transition-all">
+                  <span>Read More</span>
+                  <ArrowRight className="h-4 w-4" />
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-black border-t border-gray-800 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <Building2 className="h-8 w-8 text-[#f0d06e]" />
+                <span className="font-bold text-xl text-white">The Bloc</span>
+              </div>
+              <p className="text-gray-400">
+                Revolutionizing real estate investment through blockchain technology.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                <li><Link to="/" className="text-gray-400 hover:text-[#f0d06e]">Home</Link></li>
+                <li><Link to="/about" className="text-gray-400 hover:text-[#f0d06e]">About</Link></li>
+                <li><Link to="/properties" className="text-gray-400 hover:text-[#f0d06e]">Properties</Link></li>
+                <li><Link to="/blog" className="text-gray-400 hover:text-[#f0d06e]">Blog</Link></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-white font-semibold mb-4">Resources</h3>
+              <ul className="space-y-2">
+                <li><Link to="/help" className="text-gray-400 hover:text-[#f0d06e]">Help Center</Link></li>
+                <li><Link to="/terms" className="text-gray-400 hover:text-[#f0d06e]">Terms of Service</Link></li>
+                <li><Link to="/privacy" className="text-gray-400 hover:text-[#f0d06e]">Privacy Policy</Link></li>
+                <li><Link to="/contact" className="text-gray-400 hover:text-[#f0d06e]">Contact Us</Link></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-white font-semibold mb-4">Newsletter</h3>
+              <p className="text-gray-400 mb-4">Stay updated with our latest properties and features.</p>
+              <div className="flex gap-2">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="bg-gray-800 text-white px-4 py-2 rounded-lg flex-grow"
+                />
+                <button className="bg-[#f0d06e] text-black px-4 py-2 rounded-lg hover:bg-[#e0c15e] transition-colors">
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+            <p className="text-gray-400">© 2025 The Bloc. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
