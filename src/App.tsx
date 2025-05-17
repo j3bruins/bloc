@@ -64,4 +64,10 @@ function App() {
               </div>
             </div>
           </div>
-        
+        </section>
+      </main>
+    </div>
+  );
+}
+
+export default App;
