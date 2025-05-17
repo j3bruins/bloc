@@ -1,0 +1,36 @@
+-- users.sql
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    wallet_address VARCHAR(100) UNIQUE NOT NULL,
+    hashed_password VARCHAR(100) NOT NULL,
+    disabled BOOLEAN DEFAULT false,
+    created_at TIMESTAMP DEFAULT NOW()
+);
+
+-- properties.sql
+CREATE TABLE properties (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    location VARCHAR(100) NOT NULL,
+    total_supply INTEGER NOT NULL,
+    token_mint VARCHAR(100) UNIQUE,
+    owner_wallet VARCHAR(100) NOT NULL,
+    valuation DECIMAL(19, 2) NOT NULL,
+    is_active BOOLEAN DEFAULT true,
+    created_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY (owner_wallet) REFERENCES users(wallet_address)
+);
+
+-- ownership.sql
+CREATE TABLE ownership (
+    id SERIAL PRIMARY KEY,
+    property_id INTEGER NOT NULL,
+    wallet_address VARCHAR(100) NOT NULL,
+    token_amount INTEGER NOT NULL,
+    acquired_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY (property_id) REFERENCES properties(id),
+    FOREIGN KEY (wallet_address) REFERENCES users(wallet_address)
+);
