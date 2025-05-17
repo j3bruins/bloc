@@ -99,7 +99,7 @@ function App() {
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
                   <div className="flex justify-between items-center">
                     <span className="text-[#f0d06e] text-2xl font-bold">{formatSOL(277777)} Target</span>
-                    <span className="text-white bg-[#f0d06e]/20 px-4 py-2 rounded-full">45% Funded</span>
+                    <span className="text-white bg-[#f0d06e]/20 px-4 py-2 rounded-full">0.004% Funded</span>
                   </div>
                 </div>
               </div>
@@ -127,10 +127,10 @@ function App() {
                 <div className="bg-black/40 p-6 rounded-lg backdrop-blur-sm">
                   <h3 className="text-xl font-semibold text-white mb-4">Investment Progress</h3>
                   <div className="bg-black/60 rounded-full h-4 overflow-hidden mb-4">
-                    <div className="bg-[#f0d06e] h-full rounded-full" style={{ width: '45%' }}></div>
+                    <div className="bg-[#f0d06e] h-full rounded-full" style={{ width: '0.004%' }}></div>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-[#f0d06e]">{formatSOL(125000)} Raised</span>
+                    <span className="text-[#f0d06e]">{formatSOL(10)} Raised</span>
                     <span className="text-gray-300">Target: {formatSOL(277777)}</span>
                   </div>
                 </div>
