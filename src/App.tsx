@@ -154,7 +154,7 @@ function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="hover-card animated-border bg-black/60 backdrop-blur-md rounded-xl overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&h=400&q=80" 
+                  src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&h=400&q=80" 
                   alt="AC Hotel Gaslamp" 
                   className="h-48 w-full object-cover"
                 />
@@ -176,7 +176,7 @@ function App() {
 
               <div className="hover-card animated-border bg-black/60 backdrop-blur-md rounded-xl overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&h=400&q=80" 
+                  src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=800&h=400&q=80" 
                   alt="Holiday Inn Express" 
                   className="h-48 w-full object-cover"
                 />
