@@ -154,7 +154,7 @@ function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="hover-card animated-border bg-black/60 backdrop-blur-md rounded-xl overflow-hidden">
                 <img 
-                  src="/Screenshot 2025-08-20 at 6.38.16 PM copy copy.png" 
+                  src="/Screenshot 2025-08-20 at 6.38.16 PM.png" 
                   alt="AC Hotel Gaslamp" 
                   className="h-48 w-full object-cover"
                 />
@@ -176,7 +176,7 @@ function App() {
 
               <div className="hover-card animated-border bg-black/60 backdrop-blur-md rounded-xl overflow-hidden">
                 <img 
-                  src="/Screenshot 2025-08-20 at 6.38.32 PM copy copy.png" 
+                  src="/Screenshot 2025-08-20 at 6.38.32 PM.png" 
                   alt="Holiday Inn Express" 
                   className="h-48 w-full object-cover"
                 />
