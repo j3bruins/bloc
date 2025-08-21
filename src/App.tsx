@@ -458,4 +458,88 @@ function App() {
 
         {/* AI Integration */}
         <section className="py-20 bg-black relative overflow-hidden">
-          <div className="absolute top-40 r
+          <div className="absolute top-40 right-[25%] w-80 h-80 floating-cube opacity-30"></div>
+          <div className="absolute bottom-20 left-[30%] w-64 h-64 floating-cube-delayed-more opacity-20"></div>
+          
+          <div className="absolute inset-0 grid-background opacity-25"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 className="text-3xl font-bold text-center text-white mb-4 text-glow">
+              AI-Powered Deal Intelligence
+            </h2>
+            <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
+              Our advanced AI agents streamline the entire investment process, from deal sourcing to due diligence
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="hover-card animated-border bg-black/60 backdrop-blur-md p-8 rounded-xl">
+                <Sparkles className="h-12 w-12 text-[#f0d06e] mb-4" />
+                <h3 className="text-xl font-semibold mb-4 text-white">Smart Deal Matching</h3>
+                <p className="text-gray-300 mb-4">
+                  AI agents analyze investor preferences and market data to match you with optimal investment opportunities. Our system considers:
+                </p>
+                <ul className="space-y-2 text-gray-300">
+                  <li className="flex items-center gap-2">
+                    <ArrowRight className="h-4 w-4 text-[#f0d06e]" />
+                    Investment criteria and risk tolerance
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <ArrowRight className="h-4 w-4 text-[#f0d06e]" />
+                    Market trends and property performance
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <ArrowRight className="h-4 w-4 text-[#f0d06e]" />
+                    Geographic preferences and regulations
+                  </li>
+                </ul>
+              </div>
+              <div className="hover-card animated-border bg-black/60 backdrop-blur-md p-8 rounded-xl">
+                <BookOpen className="h-12 w-12 text-[#f0d06e] mb-4" />
+                <h3 className="text-xl font-semibold mb-4 text-white">Automated Underwriting</h3>
+                <p className="text-gray-300 mb-4">
+                  Advanced AI performs comprehensive financial analysis and risk assessment in minutes, not weeks:
+                </p>
+                <ul className="space-y-2 text-gray-300">
+                  <li className="flex items-center gap-2">
+                    <ArrowRight className="h-4 w-4 text-[#f0d06e]" />
+                    Cash flow projections and NOI analysis
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <ArrowRight className="h-4 w-4 text-[#f0d06e]" />
+                    Market comparables and valuation
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <ArrowRight className="h-4 w-4 text-[#f0d06e]" />
+                    Risk scoring and stress testing
+                  </li>
+                </ul>
+              </div>
+              <div className="hover-card animated-border bg-black/60 backdrop-blur-md p-8 rounded-xl">
+                <Timer className="h-12 w-12 text-[#f0d06e] mb-4" />
+                <h3 className="text-xl font-semibold mb-4 text-white">Smart Due Diligence</h3>
+                <p className="text-gray-300 mb-4">
+                  AI-powered document processing and verification accelerates the due diligence process:
+                </p>
+                <ul className="space-y-2 text-gray-300">
+                  <li className="flex items-center gap-2">
+                    <ArrowRight className="h-4 w-4 text-[#f0d06e]" />
+                    Automated document analysis
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <ArrowRight className="h-4 w-4 text-[#f0d06e]" />
+                    Legal compliance verification
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <ArrowRight className="h-4 w-4 text-[#f0d06e]" />
+                    Property condition assessment
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}
+
+export default App;
