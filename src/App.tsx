@@ -154,19 +154,19 @@ function App() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="hover-card animated-border bg-black/60 backdrop-blur-md rounded-xl overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80" 
-                  alt="Office Building" 
+                  src="/Screenshot 2025-08-20 at 6.38.16 PM copy.png" 
+                  alt="AC Hotel Gaslamp" 
                   className="h-48 w-full object-cover"
                 />
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="bg-blue-500 text-white text-sm px-3 py-1 rounded-full">Commercial</span>
+                    <span className="bg-blue-500 text-white text-sm px-3 py-1 rounded-full">Hotel</span>
                     <span className="bg-green-500 text-white text-sm px-3 py-1 rounded-full">Available</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Downtown Office Complex</h3>
-                  <p className="text-gray-300 mb-4">Modern office space in prime location</p>
+                  <h3 className="text-xl font-semibold text-white mb-2">AC Hotel Gaslamp</h3>
+                  <p className="text-gray-300 mb-4">Modern hotel in downtown district</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-[#f0d06e] font-semibold">$25M</span>
+                    <span className="text-[#f0d06e] font-semibold">750 Ξ</span>
                     <button className="bg-[#f0d06e] text-black px-4 py-2 rounded-lg hover:bg-[#e0c15e] transition-colors">
                       View Details
                     </button>
@@ -176,19 +176,19 @@ function App() {
 
               <div className="hover-card animated-border bg-black/60 backdrop-blur-md rounded-xl overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80" 
-                  alt="Retail Space" 
+                  src="/Screenshot 2025-08-20 at 6.38.32 PM copy.png" 
+                  alt="Holiday Inn Express" 
                   className="h-48 w-full object-cover"
                 />
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="bg-purple-500 text-white text-sm px-3 py-1 rounded-full">Retail</span>
+                    <span className="bg-purple-500 text-white text-sm px-3 py-1 rounded-full">Hotel</span>
                     <span className="bg-green-500 text-white text-sm px-3 py-1 rounded-full">Available</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Luxury Mall Complex</h3>
-                  <p className="text-gray-300 mb-4">High-end retail space with premium foot traffic</p>
+                  <h3 className="text-xl font-semibold text-white mb-2">Holiday Inn Express</h3>
+                  <p className="text-gray-300 mb-4">Modern hotel with premium amenities</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-[#f0d06e] font-semibold">$40M</span>
+                    <span className="text-[#f0d06e] font-semibold">750 Ξ</span>
                     <button className="bg-[#f0d06e] text-black px-4 py-2 rounded-lg hover:bg-[#e0c15e] transition-colors">
                       View Details
                     </button>
@@ -210,7 +210,7 @@ function App() {
                   <h3 className="text-xl font-semibold text-white mb-2">Urban Living Apartments</h3>
                   <p className="text-gray-300 mb-4">Modern apartment complex in city center</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-[#f0d06e] font-semibold">$35M</span>
+                    <span className="text-[#f0d06e] font-semibold">750 Ξ</span>
                     <button className="bg-[#f0d06e] text-black px-4 py-2 rounded-lg hover:bg-[#e0c15e] transition-colors">
                       View Details
                     </button>
